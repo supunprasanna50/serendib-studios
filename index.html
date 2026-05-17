@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <style>
+/* Validation states */
+input:invalid {
+  border-color: var(--red);
+  outline-color: var(--red);
+}
+input:valid {
+  border-color: var(--green);
+  outline-color: var(--green);
+}
+.error-text {
+  color: var(--red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+.error-messages {
+  background: var(--red-bg);
+  border: 1px solid var(--red-border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+}
+.field-hint {
+  color: var(--slate-600);
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+   </style>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Serendib Studios — award-winning documentary films from Sri Lanka.">
+  <title>Serendib Studios | Documenting Ceylon</title>
+  
+  <!-- Sprint 4: JSON-LD goes here -->
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Documentary Filmmaking Intensive",
+  "description": "Learn the art of documentary filmmaking from award-winning directors.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "Serendib Studios",
+    "url": "https://serendib-studios.lk"
+  },
+  "instructor": {
+    "@type": "Person",
+    "name": "Isuru Samarappulige",
+    "jobTitle": "Senior Lecturer"
+  },
+  "educationalLevel": "Undergraduate"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Serendib Studios Film Screening",
+  "startDate": "2026-03-14T19:00:00+05:30",
+  "endDate":   "2026-03-14T22:00:00+05:30",
+  "location": {
+    "@type": "Place",
+    "name": "Serendib Studios Cinema",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "14 Galle Face Terrace",
+      "addressLocality": "Colombo 03",
+      "addressCountry": "LK"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Serendib Studios",
+    "url": "https://serendib-studios.lk"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "LKR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Serendib Studios",
+  "url": "https://serendib-studios.lk",
+  "logo": "https://serendib-studios.lk/logo.png",
+  "foundingDate": "2010-01-15",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14 Galle Face Terrace",
+    "addressLocality": "Colombo 03",
+    "addressCountry": "LK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "films@serendib-studios.lk",
+    "contactType": "customer service"
+  },
+  "sameAs": [
+    "https://www.instagram.com/serendibstudios",
+    "https://www.facebook.com/serendibstudios"
+  ]
+}
+</script>
+
+
+</head>
+<body>
+
+
+  <!-- Sprint 1: Semantic skeleton goes here -->
+<!-- SITE HEADER -->
+<header>
+  <a href="/" class="logo">Serendib Studios</a>
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="#films">Films</a></li>
+      <li><a href="#screenings">Screenings</a></li>
+      <li><a href="#book">Book a Seat</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- MAIN CONTENT -->
+<main>
+  <!-- Hero -->
+  <section id="hero" aria-label="Featured">
+    <h1>Documenting Ceylon</h1>
+    <p>Award-winning documentary films from Sri Lanka since 2010.</p>
+    <!-- Sprint 3: Hero picture element goes here -->
+  </section>
+
+  <!-- Films: self-contained → article ✅ -->
+  <section id="films">
+    <h2>Our Films</h2>
+    <article>
+      <h3>The Spice Route</h3>
+      <p>A 90-minute journey through Sri Lanka's cinnamon trade.
+         <time datetime="2023">2023</time> · 90 min</p>
+    </article>
+    <article>
+      <h3>Monsoon Memory</h3>
+      <p>Personal stories from the 2004 tsunami survivors.
+         <time datetime="2024">2024</time> · 75 min</p>
+    </article>
+  </section>
+
+  <!-- About: NOT self-contained → section ✅ -->
+  <section id="about">
+    <h2>About the Studio</h2>
+    <p>We are a Colombo-based studio. Our work spans 12 countries.</p>
+  </section>
+
+  <!-- Sprint 2: Booking form section goes here -->
+  <!-- Sprint 3: Media section goes here -->
+
+  <!-- Screenings sidebar → aside ✅ -->
+  <aside id="screenings">
+    <h2>Upcoming Screenings</h2>
+    <ul>
+      <li>Colombo Film Festival ·
+         <time datetime="2026-03-14">14 March 2026</time></li>
+      <li>Jaffna Arts Festival ·
+         <time datetime="2026-04-02">2 April 2026</time></li>
+    </ul>
+  </aside>
+</main>
+
+
+<!-- SITE FOOTER -->
+<footer>
+  <address>
+    Serendib Studios · 14 Galle Face Terrace · Colombo 03 · Sri Lanka
+  </address>
+  <p><small>&copy; 2026 Serendib Studios. All rights reserved.</small></p>
+</footer>
+
+
+
+  <!-- Sprint 2: Booking form — <section id="book"> inside main -->
+<section id="book" aria-labelledby="booking-form-title">
+  <h2 id="booking-form-title">Book a Screening</h2>
+
+  <form action="/book-screening" method="post" aria-labelledby="booking-form-title">
+    <!-- Error live region -->
+    <div id="form-errors" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <fieldset>
+      <legend>Booking Details</legend>
+      <label for="film-title">Film Title</label>
+      <select id="film-title" name="film-title" required>
+        <option value="">Select a film...</option>
+        <option value="spice-route">The Spice Route (2023)</option>
+        <option value="monsoon-memory">Monsoon Memory (2024)</option>
+      </select>
+      <label for="screening-date">Screening Date</label>
+      <input type="date" id="screening-date" name="screening-date"
+             min="2026-05-16" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Contact Information</legend>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required
+             aria-describedby="email-hint email-error" autocomplete="email">
+      <span id="email-hint">We will send your confirmation here.</span>
+      <span id="email-error" aria-live="polite"></span>
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel">
+    </fieldset>
+
+    <fieldset>
+      <legend>Ticket Quantity</legend>
+      <label for="tickets">Number of Tickets</label>
+      <input type="number" id="tickets" name="tickets"
+             min="1" max="10" step="1" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Special Requirements</legend>
+      <label for="wheelchair">
+        <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
+        Wheelchair accessible seating required
+      </label>
+    </fieldset>
+
+    <button type="submit">Book Screening</button>
+  </form>
+</section>
+
+
+
+  <!-- Sprint 3: Media section goes inside main -->
+   <!-- Hero section inside <section id="hero"> -->
+<picture>
+  <!-- AVIF: Modern, best compression -->
+  <source type="image/avif"
+          srcset="hero-400w.avif 400w, hero-800w.avif 800w, hero-1200w.avif 1200w"
+          sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 800px">
+  <!-- WebP: Good fallback -->
+  <source type="image/webp"
+          srcset="hero-400w.webp 400w, hero-800w.webp 800w, hero-1200w.webp 1200w"
+          sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 800px">
+  <!-- JPEG: Universal fallback — fetchpriority="high" for LCP -->
+  <img src="hero-800.jpg"
+       srcset="hero-400w.jpg 400w, hero-800w.jpg 800w, hero-1200w.jpg 1200w"
+       sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 800px"
+       alt="Serendib Studios film crew at sunset"
+       fetchpriority="high"
+       width="800" height="533">
+</picture>
+
+
+<!-- Sprint 3 media section inside <main> -->
+<section id="media">
+  <h2>Trailers & Podcasts</h2>
+
+  <video controls width="800" poster="video-thumb.jpg" preload="metadata">
+    <source src="serendib-trailer.mp4"  type="video/mp4">
+    <source src="serendib-trailer.webm" type="video/webm">
+    <!-- Captions required (WCAG 1.2.2 — Level A) -->
+    <track kind="captions" src="serendib-en.vtt" srclang="en"
+           label="English" default>
+    <p>Your browser does not support HTML5 video.
+      <a href="serendib-trailer.mp4">Download trailer (MP4)</a>.</p>
+  </video>
+</section>
+
+<audio controls preload="none">
+    <!-- OGG: Firefox/Chrome -->
+    <source src="serendib-podcast.ogg" type="audio/ogg">
+    <!-- MP3: Universal support -->
+    <source src="serendib-podcast.mp3" type="audio/mpeg">
+    <!-- Fallback content -->
+    <p>Your browser does not support HTML5 audio.
+      <a href="serendib-podcast.mp3">Download podcast (MP3)</a>.</p>
+  </audio>
+
+</body>
+</html>
