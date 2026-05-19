@@ -1,129 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <style>
-/* Validation states */
-input:invalid {
-  border-color: var(--red);
-  outline-color: var(--red);
-}
-input:valid {
-  border-color: var(--green);
-  outline-color: var(--green);
-}
-.error-text {
-  color: var(--red);
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-}
-.error-messages {
-  background: var(--red-bg);
-  border: 1px solid var(--red-border);
-  border-radius: var(--radius);
-  padding: 0.75rem;
-  margin-top: 0.5rem;
-}
-.field-hint {
-  color: var(--slate-600);
-  font-size: 0.875rem;
-  display: block;
-  margin-top: 0.25rem;
-}
-
-   </style>
-
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-        content="Serendib Studios — award-winning documentary films from Sri Lanka.">
+  <meta name="description" content="Serendib Studios — award-winning documentary films from Sri Lanka.">
   <title>Serendib Studios | Documenting Ceylon</title>
-  
-  <!-- Sprint 4: JSON-LD goes here -->
-  
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Course",
-  "name": "Documentary Filmmaking Intensive",
-  "description": "Learn the art of documentary filmmaking from award-winning directors.",
-  "provider": {
-    "@type": "EducationalOrganization",
-    "name": "Serendib Studios",
-    "url": "https://serendib-studios.lk"
-  },
-  "instructor": {
-    "@type": "Person",
-    "name": "Isuru Samarappulige",
-    "jobTitle": "Senior Lecturer"
-  },
-  "educationalLevel": "Undergraduate"
-}
-</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "Serendib Studios Film Screening",
-  "startDate": "2026-03-14T19:00:00+05:30",
-  "endDate":   "2026-03-14T22:00:00+05:30",
-  "location": {
-    "@type": "Place",
-    "name": "Serendib Studios Cinema",
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Documentary Filmmaking Intensive",
+    "description": "Learn the art of documentary filmmaking from award-winning directors.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Serendib Studios",
+      "url": "https://serendib-studios.lk"
+    },
+    "instructor": {
+      "@type": "Person",
+      "name": "Isuru Samarappulige",
+      "jobTitle": "Senior Lecturer"
+    },
+    "educationalLevel": "Undergraduate"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Serendib Studios Film Screening",
+    "startDate": "2026-03-14T19:00:00+05:30",
+    "endDate": "2026-03-14T22:00:00+05:30",
+    "location": {
+      "@type": "Place",
+      "name": "Serendib Studios Cinema",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14 Galle Face Terrace",
+        "addressLocality": "Colombo 03",
+        "addressCountry": "LK"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Serendib Studios",
+      "url": "https://serendib-studios.lk"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "LKR",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Serendib Studios",
+    "url": "https://serendib-studios.lk",
+    "logo": "https://serendib-studios.lk/logo.png",
+    "foundingDate": "2010-01-15",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "14 Galle Face Terrace",
       "addressLocality": "Colombo 03",
       "addressCountry": "LK"
-    }
-  },
-  "organizer": {
-    "@type": "Organization",
-    "name": "Serendib Studios",
-    "url": "https://serendib-studios.lk"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "LKR",
-    "availability": "https://schema.org/InStock"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "films@serendib-studios.lk",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.instagram.com/serendibstudios",
+      "https://www.facebook.com/serendibstudios"
+    ]
   }
-}
-</script>
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Serendib Studios",
-  "url": "https://serendib-studios.lk",
-  "logo": "https://serendib-studios.lk/logo.png",
-  "foundingDate": "2010-01-15",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "14 Galle Face Terrace",
-    "addressLocality": "Colombo 03",
-    "addressCountry": "LK"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "films@serendib-studios.lk",
-    "contactType": "customer service"
-  },
-  "sameAs": [
-    "https://www.instagram.com/serendibstudios",
-    "https://www.facebook.com/serendibstudios"
-  ]
-}
-</script>
+  <style>
+    /* ── DESIGN TOKENS ── */
+    :root {
+      --gold:    #c9a84c;
+      --gold-lt: #e8d5a3;
+      --dark:    #0e0e0e;
+      --dark-2:  #1a1a1a;
+      --dark-3:  #252525;
+      --border:  #2e2e2e;
+      --text:    #f0ece4;
+      --muted:   #8a8070;
+      --white:   #ffffff;
+      --red:     #c0392b;
+      --red-bg:  #2d0f0f;
+      --green:   #27ae60;
+      --radius:  6px;
+      --radius-lg: 12px;
+      --display: 'Playfair Display', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --shadow:  0 4px 24px rgba(0,0,0,0.4);
+    }
 
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-lt); }
+    ul { list-style: none; }
 
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14,14,14,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 70px;
+    }
+
+    .logo {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .logo:hover { color: var(--gold-lt); }
+
+    nav[aria-label="Primary navigation"] ul {
+      display: flex;
+      gap: 36px;
+    }
+    nav[aria-label="Primary navigation"] a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    nav[aria-label="Primary navigation"] a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #hero picture {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    #hero picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.45;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(14,14,14,0.2) 0%,
+        rgba(14,14,14,0.5) 60%,
+        rgba(14,14,14,1) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 60px;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    #hero h1 {
+      font-family: var(--display);
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    #hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    #hero > .hero-content > p {
+      font-size: 18px;
+      color: rgba(240,236,228,0.7);
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .hero-cta:hover {
+      background: var(--gold-lt);
+      color: var(--dark);
+      transform: translateY(-1px);
+    }
+
+    /* ── SECTIONS GENERAL ── */
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-label::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h2 {
+      font-family: var(--display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 48px;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── FILMS ── */
+    #films {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .films-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    article {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    article::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    article:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    article h3 {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+    article p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    article time {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    #about p {
+      font-size: 18px;
+      color: rgba(240,236,228,0.75);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+
+    /* ── SCREENINGS (aside) ── */
+    aside#screenings {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 0;
+    }
+    aside#screenings h2 { margin-bottom: 28px; }
+    aside#screenings ul { display: flex; flex-direction: column; gap: 14px; }
+    aside#screenings li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 15px;
+      color: var(--muted);
+      padding: 16px 20px;
+      background: var(--dark-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      max-width: 500px;
+    }
+    aside#screenings li::before {
+      content: '▶';
+      color: var(--gold);
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+    aside#screenings time { color: var(--gold-lt); font-weight: 500; margin-left: auto; }
+
+    /* ── MEDIA ── */
+    #media {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    #media h2 { margin-bottom: 40px; }
+
+    .media-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .media-block {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .media-block-label {
+      padding: 14px 20px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--border);
+      background: var(--dark-3);
+    }
+    .media-block-body { padding: 24px; }
+
+    video {
+      width: 100%;
+      border-radius: var(--radius);
+      background: #000;
+    }
+    audio {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    /* ── BOOKING FORM ── */
+    #book {
+      padding: 100px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--dark-2);
+    }
+
+    #book h2 { margin-bottom: 8px; }
+    #book > .section-inner > p {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 48px;
+    }
+
+    form {
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    fieldset {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      background: var(--dark-3);
+    }
+    legend {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 0 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(240,236,228,0.8);
+      margin-top: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    label:first-of-type { margin-top: 16px; }
+
+    input, select {
+      width: 100%;
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus, select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+    }
+    select option { background: var(--dark-3); }
+
+    /* Validation states */
+    input:user-invalid {
+      border-color: var(--red);
+      outline-color: var(--red);
+    }
+    input:user-valid {
+      border-color: var(--green);
+    }
+    input:invalid {
+      border-color: var(--red);
+      outline-color: var(--red);
+    }
+    input:valid {
+      border-color: var(--green);
+    }
+
+    .error-text {
+      color: #e74c3c;
+      font-size: 0.85rem;
+      margin-top: 6px;
+      display: block;
+    }
+    .error-messages {
+      background: var(--red-bg);
+      border: 1px solid rgba(192,57,43,0.4);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+    }
+    .field-hint {
+      color: var(--muted);
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 6px;
+    }
+
+    /* Checkbox label */
+    label:has(input[type="checkbox"]) {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--gold);
+    }
+
+    button[type="submit"] {
+      align-self: flex-start;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      border-radius: var(--radius);
+      padding: 14px 36px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: var(--gold-lt);
+      transform: translateY(-1px);
+    }
+
+    #form-errors:not(:empty) {
+      background: var(--red-bg);
+      border: 1px solid rgba(192,57,43,0.4);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #e74c3c;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      padding: 48px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    footer address {
+      font-style: normal;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    footer small {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer-brand {
+      font-family: var(--display);
+      font-size: 20px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      header { padding: 0 24px; }
+      nav[aria-label="Primary navigation"] ul { gap: 20px; }
+      nav[aria-label="Primary navigation"] a { font-size: 11px; }
+      .hero-content { padding: 0 24px; }
+      .section-inner { padding: 0 24px; }
+      #films { padding: 60px 0; }
+      .films-grid { grid-template-columns: 1fr; }
+      #about { padding: 60px 0; }
+      #media { padding: 60px 0; }
+      #book { padding: 60px 0; }
+      footer { flex-direction: column; align-items: flex-start; padding: 40px 24px; }
+    }
+  </style>
 </head>
 <body>
 
-
-  <!-- Sprint 1: Semantic skeleton goes here -->
 <!-- SITE HEADER -->
 <header>
   <a href="/" class="logo">Serendib Studios</a>
@@ -131,167 +626,185 @@ input:valid {
     <ul>
       <li><a href="#films">Films</a></li>
       <li><a href="#screenings">Screenings</a></li>
+      <li><a href="#media">Trailers</a></li>
       <li><a href="#book">Book a Seat</a></li>
       <li><a href="#about">About</a></li>
     </ul>
   </nav>
 </header>
 
-
 <!-- MAIN CONTENT -->
 <main>
-  <!-- Hero -->
+
+  <!-- ── HERO ── -->
   <section id="hero" aria-label="Featured">
-    <h1>Documenting Ceylon</h1>
-    <p>Award-winning documentary films from Sri Lanka since 2010.</p>
-    <!-- Sprint 3: Hero picture element goes here -->
+    <picture>
+      <img src="assets\images\hero-800.jpeg"
+           alt="Beautiful Sri Lanka landscape — Serendib Studios"
+           fetchpriority="high"
+           width="1200" height="800">
+    </picture>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Sri Lanka's Documentary Studio</p>
+      <h1>Documenting<br><em>Ceylon</em></h1>
+      <p>Award-winning documentary films from Sri Lanka since 2010. We tell stories the world needs to hear.</p>
+      <a href="#films" class="hero-cta">Explore Our Films</a>
+    </div>
   </section>
 
-  <!-- Films: self-contained → article ✅ -->
+  <!-- ── FILMS ── -->
   <section id="films">
-    <h2>Our Films</h2>
-    <article>
-      <h3>The Spice Route</h3>
-      <p>A 90-minute journey through Sri Lanka's cinnamon trade.
-         <time datetime="2023">2023</time> · 90 min</p>
-    </article>
-    <article>
-      <h3>Monsoon Memory</h3>
-      <p>Personal stories from the 2004 tsunami survivors.
-         <time datetime="2024">2024</time> · 75 min</p>
-    </article>
+    <div class="section-inner">
+      <p class="section-label">Our Work</p>
+      <h2>Award-Winning Films</h2>
+      <div class="films-grid">
+        <article>
+          <h3>The Spice Route</h3>
+          <p>A 90-minute journey through Sri Lanka's cinnamon trade, from jungle harvest to European markets.
+            <br><br><time datetime="2023">2023</time> · 90 min · Documentary</p>
+        </article>
+        <article>
+          <h3>Monsoon Memory</h3>
+          <p>Personal stories from the 2004 tsunami survivors — two decades of resilience, rebuilding and remembrance.
+            <br><br><time datetime="2024">2024</time> · 75 min · Documentary</p>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <!-- About: NOT self-contained → section ✅ -->
+  <!-- ── ABOUT ── -->
   <section id="about">
-    <h2>About the Studio</h2>
-    <p>We are a Colombo-based studio. Our work spans 12 countries.</p>
+    <div class="section-inner">
+      <p class="section-label">Who We Are</p>
+      <h2>About the Studio</h2>
+      <p>We are a Colombo-based studio. Our work spans 12 countries and has screened at major international film festivals. Founded in 2010, Serendib Studios has produced over 30 documentary films that explore Sri Lanka's culture, history, and people.</p>
+    </div>
   </section>
 
-  <!-- Sprint 2: Booking form section goes here -->
-  <!-- Sprint 3: Media section goes here -->
-
-  <!-- Screenings sidebar → aside ✅ -->
+  <!-- ── SCREENINGS ── -->
   <aside id="screenings">
-    <h2>Upcoming Screenings</h2>
-    <ul>
-      <li>Colombo Film Festival ·
-         <time datetime="2026-03-14">14 March 2026</time></li>
-      <li>Jaffna Arts Festival ·
-         <time datetime="2026-04-02">2 April 2026</time></li>
-    </ul>
+    <div class="section-inner">
+      <p class="section-label">Coming Soon</p>
+      <h2>Upcoming Screenings</h2>
+      <ul>
+        <li>
+          Colombo Film Festival
+          <time datetime="2026-03-14">14 March 2026</time>
+        </li>
+        <li>
+          Jaffna Arts Festival
+          <time datetime="2026-04-02">2 April 2026</time>
+        </li>
+      </ul>
+    </div>
   </aside>
-</main>
 
+  <!-- ── MEDIA ── -->
+  <section id="media">
+    <div class="section-inner">
+      <p class="section-label">Watch &amp; Listen</p>
+      <h2>Trailers &amp; Podcasts</h2>
+      <div class="media-grid">
+
+        <div class="media-block">
+          <div class="media-block-label">🎬 Film Trailer</div>
+          <div class="media-block-body">
+            <video controls preload="metadata">
+              <source src="assets/video/serendib-trailer.mp4.mp4" type="video/mp4">
+              <track kind="captions" src="serendib-en.vtt" srclang="en" label="English" default>
+              <p>Your browser does not support HTML5 video.
+                <a href="assets/video/serendib-trailer.mp4.mp4">Download trailer (MP4)</a>.</p>
+            </video>
+          </div>
+        </div>
+
+        <div class="media-block">
+          <div class="media-block-label">🎙 Studio Podcast</div>
+          <div class="media-block-body">
+            <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Behind the scenes — filmmaking stories from our directors.</p>
+            <audio controls preload="none">
+              <source src="assets/audio/serendib-podcast.mp3.mpeg" type="audio/mpeg">
+              <p>Your browser does not support HTML5 audio.
+                <a href="assets/audio/serendib-podcast.mp3.mpeg">Download podcast</a>.</p>
+            </audio>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOKING FORM ── -->
+  <section id="book" aria-labelledby="booking-form-title">
+    <div class="section-inner">
+      <p class="section-label">Reserve Your Seat</p>
+      <h2 id="booking-form-title">Book a Screening</h2>
+      <p>Secure your place at our next screening. Free entry — limited seats available.</p>
+
+      <form action="/book-screening" method="post" aria-labelledby="booking-form-title">
+
+        <!-- Error live region -->
+        <div id="form-errors" role="status" aria-live="polite" aria-atomic="true"></div>
+
+        <fieldset>
+          <legend>Booking Details</legend>
+          <label for="film-title">Film Title</label>
+          <select id="film-title" name="film-title" required>
+            <option value="">Select a film...</option>
+            <option value="spice-route">The Spice Route (2023)</option>
+            <option value="monsoon-memory">Monsoon Memory (2024)</option>
+          </select>
+          <label for="screening-date">Screening Date</label>
+          <input type="date" id="screening-date" name="screening-date"
+                 min="2026-05-17" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contact Information</legend>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required
+                 aria-describedby="email-hint email-error"
+                 autocomplete="email"
+                 placeholder="your@email.com">
+          <span id="email-hint" class="field-hint">We will send your confirmation here.</span>
+          <span id="email-error" class="error-text" aria-live="polite"></span>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel"
+                 placeholder="+94 77 000 0000">
+        </fieldset>
+
+        <fieldset>
+          <legend>Ticket Quantity</legend>
+          <label for="tickets">Number of Tickets</label>
+          <input type="number" id="tickets" name="tickets"
+                 min="1" max="10" step="1" required>
+        </fieldset>
+
+        <fieldset>
+          <legend>Special Requirements</legend>
+          <label for="wheelchair">
+            <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
+            Wheelchair accessible seating required
+          </label>
+        </fieldset>
+
+        <button type="submit">Book Screening</button>
+
+      </form>
+    </div>
+  </section>
+
+</main>
 
 <!-- SITE FOOTER -->
 <footer>
+  <span class="footer-brand">Serendib Studios</span>
   <address>
-    Serendib Studios · 14 Galle Face Terrace · Colombo 03 · Sri Lanka
+    14 Galle Face Terrace · Colombo 03 · Sri Lanka<br>
+    <a href="mailto:films@serendib-studios.lk">films@serendib-studios.lk</a>
   </address>
   <p><small>&copy; 2026 Serendib Studios. All rights reserved.</small></p>
 </footer>
-
-
-
-  <!-- Sprint 2: Booking form — <section id="book"> inside main -->
-<section id="book" aria-labelledby="booking-form-title">
-  <h2 id="booking-form-title">Book a Screening</h2>
-
-  <form action="/book-screening" method="post" aria-labelledby="booking-form-title">
-    <!-- Error live region -->
-    <div id="form-errors" role="status" aria-live="polite" aria-atomic="true"></div>
-
-    <fieldset>
-      <legend>Booking Details</legend>
-      <label for="film-title">Film Title</label>
-      <select id="film-title" name="film-title" required>
-        <option value="">Select a film...</option>
-        <option value="spice-route">The Spice Route (2023)</option>
-        <option value="monsoon-memory">Monsoon Memory (2024)</option>
-      </select>
-      <label for="screening-date">Screening Date</label>
-      <input type="date" id="screening-date" name="screening-date"
-             min="2026-05-16" required>
-    </fieldset>
-
-    <fieldset>
-      <legend>Contact Information</legend>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required
-             aria-describedby="email-hint email-error" autocomplete="email">
-      <span id="email-hint">We will send your confirmation here.</span>
-      <span id="email-error" aria-live="polite"></span>
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" autocomplete="tel">
-    </fieldset>
-
-    <fieldset>
-      <legend>Ticket Quantity</legend>
-      <label for="tickets">Number of Tickets</label>
-      <input type="number" id="tickets" name="tickets"
-             min="1" max="10" step="1" required>
-    </fieldset>
-
-    <fieldset>
-      <legend>Special Requirements</legend>
-      <label for="wheelchair">
-        <input type="checkbox" id="wheelchair" name="wheelchair" value="yes">
-        Wheelchair accessible seating required
-      </label>
-    </fieldset>
-
-    <button type="submit">Book Screening</button>
-  </form>
-</section>
-
-
-
-  <!-- Sprint 3: Media section goes inside main -->
-   <!-- Hero section inside <section id="hero"> -->
-<picture>
-  <!-- AVIF: Modern, best compression -->
-  <source type="image/avif"
-          srcset="hero-400w.avif 400w, hero-800w.avif 800w, hero-1200w.avif 1200w"
-          sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 800px">
-  <!-- WebP: Good fallback -->
-  <source type="image/webp"
-          srcset="hero-400w.webp 400w, hero-800w.webp 800w, hero-1200w.webp 1200w"
-          sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 800px">
-  <!-- JPEG: Universal fallback — fetchpriority="high" for LCP -->
-  <img src="hero-800.jpg"
-       srcset="hero-400w.jpg 400w, hero-800w.jpg 800w, hero-1200w.jpg 1200w"
-       sizes="(max-width:600px) 100vw, (max-width:1200px) 50vw, 800px"
-       alt="Serendib Studios film crew at sunset"
-       fetchpriority="high"
-       width="800" height="533">
-</picture>
-
-
-<!-- Sprint 3 media section inside <main> -->
-<section id="media">
-  <h2>Trailers & Podcasts</h2>
-
-  <video controls width="800" poster="video-thumb.jpg" preload="metadata">
-    <source src="serendib-trailer.mp4"  type="video/mp4">
-    <source src="serendib-trailer.webm" type="video/webm">
-    <!-- Captions required (WCAG 1.2.2 — Level A) -->
-    <track kind="captions" src="serendib-en.vtt" srclang="en"
-           label="English" default>
-    <p>Your browser does not support HTML5 video.
-      <a href="serendib-trailer.mp4">Download trailer (MP4)</a>.</p>
-  </video>
-</section>
-
-<audio controls preload="none">
-    <!-- OGG: Firefox/Chrome -->
-    <source src="serendib-podcast.ogg" type="audio/ogg">
-    <!-- MP3: Universal support -->
-    <source src="serendib-podcast.mp3" type="audio/mpeg">
-    <!-- Fallback content -->
-    <p>Your browser does not support HTML5 audio.
-      <a href="serendib-podcast.mp3">Download podcast (MP3)</a>.</p>
-  </audio>
 
 </body>
 </html>
